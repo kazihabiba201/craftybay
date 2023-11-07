@@ -239,9 +239,6 @@ craftybay_ecommerce_application/
 
 ## Crafty_Bay Screens
 
-<div style="display: flex; flex-wrap: wrap;">
-   <img src="(https://github.com/kazihabiba201/craftybay/assets/72264916/a4c8a461-239e-449b-9783-ed6149582774)" width="200" />
-   <img src="(https://github.com/kazihabiba201/craftybay/assets/72264916/a4c8a461-239e-449b-9783-ed6149582774)" width="200" />
-
-</div>
+(https://github.com/kazihabiba201/craftybay/assets/72264916/a4c8a461-239e-449b-9783-ed6149582774)
+  
 
