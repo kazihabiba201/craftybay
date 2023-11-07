@@ -2,7 +2,7 @@
 
 CraftyBay is a sample e-commerce project that demonstrates the potential of creating an online platform for showcasing cutting-edge electronics and gadgets. It is not intended for commercial use or sale but serves as an example of how a tech-centric e-commerce app could be designed. CraftyBay's focus is on providing a seamless and enjoyable shopping experience, with an emphasis on user-friendliness and a wide range of products to explore.
 
-![Uploading all.jpg…]()
+![all](https://github.com/kazihabiba201/craftybay/assets/72264916/b1b372e0-6885-44a6-8b0d-7158161a416d)
 
 ## MVP Implementation
 
