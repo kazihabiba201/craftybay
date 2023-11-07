@@ -233,5 +233,7 @@ craftybay_ecommerce_application/
 ```
 ## Crafty_Bay Logo
 ![logo_nav](https://github.com/kazihabiba201/craftybay/assets/72264916/32c4fbb5-bbcf-4ad0-9795-35f381737532)
+
+
 ![logo](https://github.com/kazihabiba201/craftybay/assets/72264916/b14f5aa2-418e-40cf-b018-53349958b72f)
 
