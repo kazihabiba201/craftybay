@@ -237,3 +237,12 @@ craftybay_ecommerce_application/
 ## Crafty_Bay Logo
 ![logo](https://github.com/kazihabiba201/craftybay/assets/72264916/b14f5aa2-418e-40cf-b018-53349958b72f)
 
+## Crafty_Bay Screens
+
+| Screen             | UI                                                              |
+| ----------------- | ------------------------------------------------------------------ |
+| Example Color | ![#0a192f](![Screenshot_2023-11-06-23-03-51-55_4cf85880cfe8ba4bfde5d76319ab5d2f](https://github.com/kazihabiba201/craftybay/assets/72264916/a4c8a461-239e-449b-9783-ed6149582774))  |
+| Example Color | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+)  |
+| Example Color | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+)  |
+| Example Color | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+)  |
+
