@@ -239,11 +239,8 @@ craftybay_ecommerce_application/
 
 ## Crafty_Bay Screens
 
-| Screen                       | UI                                                              |
-| -----------------------------| ------------------------------------------------------------------ |
-| Splash Screen                | ![Screenshot_2023-11-06-23-03-51-55_4cf85880cfe8ba4bfde5d76319ab5d2f](https://github.com/kazihabiba201/craftybay/assets/72264916/a4c8a461-239e-449b-9783-ed6149582774)  | 
-| EmailVerification Screen     | ![Screenshot_2023-11-08-04-32-28-09_4cf85880cfe8ba4bfde5d76319ab5d2f](https://github.com/kazihabiba201/craftybay/assets/72264916/e7e34fc0-e7b6-458e-8fd6-57b710613b89) |
-| Example Color    | ![Screenshot_2023-11-08-04-31-54-01_4cf85880cfe8ba4bfde5d76319ab5d2f](https://github.com/kazihabiba201/craftybay/assets/72264916/66461402-1465-497a-878c-592aedc3866c)  |
-| Example Color   | ![Screenshot_2023-11-08-04-32-00-87_4cf85880cfe8ba4bfde5d76319ab5d2f](https://github.com/kazihabiba201/craftybay/assets/72264916/8d2b66e7-5e9f-4d7b-a1d3-5d3b200d9f35) |
-| Example Color   | ![Screenshot_2023-11-08-04-32-00-87_4cf85880cfe8ba4bfde5d76319ab5d2f](https://github.com/kazihabiba201/craftybay/assets/72264916/8d2b66e7-5e9f-4d7b-a1d3-5d3b200d9f35) |
+<div style="display: flex; flex-wrap: wrap;">
+   <img src="(https://github.com/kazihabiba201/craftybay/assets/72264916/a4c8a461-239e-449b-9783-ed6149582774)" width="200" />
+
+</div>
 
