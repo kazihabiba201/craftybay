@@ -137,15 +137,14 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                             Get.find<GetProductReviewController>().getProductReview(widget.product);
 
                                             Get.snackbar(
-                                              'Thank you for your feedback!',
-                                              'Successfully added review',
-                                              backgroundColor: Colors.green.withOpacity(.5),
+                                              'We are grateful for your feedback!',
+                                              'Review added successfully',
                                               snackPosition: SnackPosition.BOTTOM,
                                             );
                                           }else{
                                             Get.snackbar(
                                               'failed!',
-                                              'Product Review failed.Try again',
+                                              'Sorry, the product review could not be processed. Please attempt it again.',
                                               backgroundColor: Colors.red,
                                               snackPosition: SnackPosition.BOTTOM,
                                             );

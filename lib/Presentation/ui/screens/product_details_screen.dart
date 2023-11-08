@@ -347,20 +347,19 @@
 //   }
 // }
 
+import 'package:ecommerce/Presentation/state_holders/add_to_cart_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/create_wish_list_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/delete_wish_list_item_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/products_details_controller.dart';
-import 'package:ecommerce/Presentation/state_holders/read_profile_controller.dart';
-import 'package:ecommerce/Presentation/state_holders/wish_list_controller.dart';
-import 'package:ecommerce/Presentation/ui/screens/ReviewsScreen.dart';
-import 'package:ecommerce/Presentation/ui/screens/auth/complete_profile_screen.dart';
+
 import 'package:ecommerce/Presentation/ui/screens/product_review_list_screen.dart';
 import 'package:ecommerce/Presentation/ui/utility/app_colors.dart';
+import 'package:ecommerce/data/models/product_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../data/models/product_details.dart';
-import '../../state_holders/add_to_cart_controller.dart';
+
+
 
 import '../widgets/custom_stepper.dart';
 import '../widgets/home/product_image_slider.dart';
@@ -389,7 +388,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       Get.find<ProductDetailsController>().getProductDetails(widget.productId);
     });
   }
-  final TextEditingController _ratingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -446,7 +445,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   }
 
   Padding productDetails(ProductDetails productDetails, List<String> colors) {
-    //convertStringToColor(productDetails.color ?? '');
+
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -526,16 +525,15 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                     .createWishList(productDetails.productId!);
                                 if (response) {
                                   Get.snackbar(
-                                    'Happy Shopping! ツ',
-                                    'This product has been added to wish list',
-                                    backgroundColor: Colors.green.withOpacity(.2),
+                                    'Enjoy your shopping!',
+                                    'Your item has been added to your wish list.',
                                     snackPosition: SnackPosition.BOTTOM,
                                   );
                                 } else {
                                   Get.snackbar(
                                     'Opps!',
-                                    'Unable add to wish to list',
-                                    backgroundColor: Colors.red.withOpacity(.2),
+                                    'Sorry, we could not add it to your wish list.',
+                                    backgroundColor: Colors.red,
                                     snackPosition: SnackPosition.BOTTOM,
                                   );
                                 }
@@ -676,10 +674,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         );
                       }
                     },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors
-                          .primaryColor, // Background color
-                    ),
+
                     child: const Text('Add to Cart'),
                   );
                 }

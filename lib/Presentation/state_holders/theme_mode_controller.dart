@@ -1,36 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class ThemeModeController {
-  ValueNotifier<ThemeMode> themeMode = ValueNotifier(ThemeMode.light);
+import 'package:get_storage/get_storage.dart';
+import 'package:get/get.dart';
 
-  void changeThemeMode(ThemeMode mode) {
-    themeMode.value = mode;
+class ThemeModeController{
+  final _getStorage  = GetStorage();
+  final storageKey = "isDarkMode";
+
+  ThemeMode getThemeMode(){
+    return isSavedDarkMode() ? ThemeMode.dark : ThemeMode.light;
+  }
+  bool isSavedDarkMode(){
+    return _getStorage.read(storageKey) ?? false;
   }
 
-  void toggleThemeMode() {
-    if (themeMode.value == ThemeMode.light) {
-      themeMode.value = ThemeMode.dark;
-    } else {
-      themeMode.value = ThemeMode.light;
-    }
+  void saveThemeMode(isDarkMode){
+    _getStorage.write(storageKey, isDarkMode);
   }
 
-
-  Future<void> saveCurrentThemeMode(ThemeMode mode) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setInt('theme_mode', themeModeToInt(mode));
-  }
-
-  int themeModeToInt(ThemeMode mode) {
-    switch (mode) {
-      case ThemeMode.system:
-        return 0;
-      case ThemeMode.light:
-        return 1;
-      case ThemeMode.dark:
-        return 2;
-    }
+  void changeThemeMode(){
+    Get.changeThemeMode(isSavedDarkMode() ? ThemeMode.light : ThemeMode.dark);
+    saveThemeMode(!isSavedDarkMode());
   }
 
 }

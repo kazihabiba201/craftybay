@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/Presentation/state_holders/cart_list_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,7 +26,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
       ..setNavigationDelegate(
         NavigationDelegate(
           onProgress: (int progress) {
-            // Update loading bar.
+
           },
           onPageStarted: (String url) {},
           onPageFinished: (String url) {
@@ -41,13 +40,13 @@ class _WebViewScreenState extends State<WebViewScreen> {
           },
           onWebResourceError: (WebResourceError error) {},
           onNavigationRequest: (NavigationRequest request) {
-            print(request);
-            if (request.url.contains("tran_type=success")) {
-              setState(() {
-                paymentComplete = true;
-              });
-              navigateBack();
-            }
+            // print(request);
+            // if (request.url.contains("tran_type=success")) {
+            //   setState(() {
+            //     paymentComplete = true;
+            //   });
+            //   navigateBack();
+            // }
             if (request.url.startsWith('https://www.youtube.com/')) {
               return NavigationDecision.prevent;
             }

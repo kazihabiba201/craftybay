@@ -1,4 +1,8 @@
-import 'package:ecommerce/data/models/product.dart';
+
+
+
+
+import 'product.dart';
 
 class ProductDetails {
   int? id;

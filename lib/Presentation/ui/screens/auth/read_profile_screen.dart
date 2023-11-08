@@ -327,7 +327,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     keyboardType: TextInputType.text,
                     controller: _shipCityTEController,
                     decoration: const InputDecoration(
-                      hintText: 'Mireyamouth',
+                      hintText: 'Dhaka',
                       labelText: 'Shipping City',
                     ),
                     validator: (String? text) {

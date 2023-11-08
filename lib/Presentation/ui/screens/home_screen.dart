@@ -2,11 +2,14 @@ import 'package:ecommerce/Presentation/state_holders/auth_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/category_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/home_slider_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/main_bottom_nav_controller.dart';
+import 'package:ecommerce/Presentation/state_holders/new_product_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/popular_product_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/read_profile_controller.dart';
+import 'package:ecommerce/Presentation/state_holders/special_product_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/theme_mode_controller.dart';
 import 'package:ecommerce/Presentation/ui/screens/auth/complete_profile_screen.dart';
 import 'package:ecommerce/Presentation/ui/screens/product_list_screen.dart';
+import 'package:ecommerce/Presentation/ui/screens/splash_screens.dart';
 import 'package:ecommerce/Presentation/ui/utility/Images_assets.dart';
 import 'package:ecommerce/Presentation/ui/widgets/category_card.dart';
 import 'package:ecommerce/Presentation/ui/widgets/circular_icon_button.dart';
@@ -16,9 +19,8 @@ import 'package:ecommerce/Presentation/ui/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-import '../../state_holders/new_product_controller.dart';
-import '../../state_holders/special_product_controller.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,11 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         icon: Icons.light_mode_outlined,
         onTap: () {
 
-          if (Get.isDarkMode) {
-            Get.changeThemeMode(ThemeMode.light);
-          } else {
-            Get.changeThemeMode(ThemeMode.dark);
-          }
+          ThemeModeController().changeThemeMode();
 
     }),
 
@@ -65,15 +63,17 @@ class _HomeScreenState extends State<HomeScreen> {
               width: 8,
             ),
             CircleIconButton(
-              icon: Icons.login_outlined, onTap: () async {  await AuthController.clear();
-              await AuthController.getAccessToken(); },),
+              icon: Icons.login_outlined, onTap: () async {
+              await AuthController.clear();
+              Get.to(const SplashScreen());
+            },),
             const SizedBox(
               width: 8,
             ),
             CircleIconButton(
                 icon: Icons.call,
               onTap: () {
-
+           launch('tel:+08801787099258');
               },)
           ],
         ),
