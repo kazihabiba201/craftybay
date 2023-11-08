@@ -247,6 +247,7 @@ craftybay_ecommerce_application/
  
 
 </div>
+
 ### Cart_Screen
 
 ![Screenshot_2023-11-08-04-31-54-01_4cf85880cfe8ba4bfde5d76319ab5d2f](https://github.com/kazihabiba201/craftybay/assets/72264916/66461402-1465-497a-878c-592aedc3866c)  
