@@ -239,6 +239,7 @@ craftybay_ecommerce_application/
 
 ## Crafty_Bay Screens
 
-
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/66461402-1465-497a-878c-592aedc3866c" height="400"/>
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/8d2b66e7-5e9f-4d7b-a1d3-5d3b200d9f35" height="400"/>
+### Splash_Screen
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/a4c8a461-239e-449b-9783-ed6149582774" height="400"/>
+### EmailVerification_Screen
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/d8d37e3a-9dd1-4ae6-8900-46561bc82dab" height="400"/>
