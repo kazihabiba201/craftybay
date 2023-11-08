@@ -105,6 +105,8 @@ class _CartScreenState extends State<CartScreen> {
                         SizedBox(
                           width: 120,
                           child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.primaryColor),
                             onPressed: () async {
                           if (await Get.find<ReadProfileController>()
                                   .readProfileData() ==

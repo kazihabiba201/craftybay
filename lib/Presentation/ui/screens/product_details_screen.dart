@@ -297,6 +297,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 );
               }
               return ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primaryColor),// Background color
                 onPressed: () async {
                   final result = await addToCartController.addToCart(
                     details.id!,
