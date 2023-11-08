@@ -275,6 +275,7 @@ craftybay_ecommerce_application/
 
 ## Expressing Gratitude
 
-### I would like to extend my sincere appreciation to my mentors:
+### I'm deeply grateful to the individuals who guided me:
 
-I am grateful to `Rabbil Hasan` for his insightful prerecorded classes. Additionally, I want to thank `Rafat Jamader Meraz` for his guidance on creating a seamless UI and API integration.
+- `Rabbil Hasan` for sharing invaluable knowledge through prerecorded classes.
+- `Rafat Jamader Meraz` taught me how to make UI like this and the API integration seamless.
