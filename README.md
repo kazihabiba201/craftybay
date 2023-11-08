@@ -81,7 +81,7 @@ Install dependencies:
 
 ### Installable APK
 
-Click Here to download APK
+[![drive](https://img.shields.io/badge/Click_Here_to_download_APK-0A66C2?style=for-the-badge&logo=flutter&logoColor=white)](https://drive.google.com/file/d/1mdTTnkY0tp4NTHY-85O7QyO3tA8un2E9/view?usp=sharing)
 
 ### Executing the Code
 
