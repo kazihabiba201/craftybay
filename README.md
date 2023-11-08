@@ -245,6 +245,8 @@ craftybay_ecommerce_application/
 ### Verification Screen
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/d8d37e3a-9dd1-4ae6-8900-46561bc82dab" height="500"/>
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/fd4d8547-256d-4c3b-87a5-edd7cb626349" height="500"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/22347dff-6847-40ef-a29c-715bb95ef53d" height="500"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/5a4b7ccb-8014-41ae-a541-33049487e426" height="500"/>
 
 ### Bottom_NavBar Screen
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/c4bba8a8-9304-4223-aa7c-0b2853da4021" height="500"/>
@@ -255,6 +257,7 @@ craftybay_ecommerce_application/
 ### Payment_gateway Screen
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/e7e34fc0-e7b6-458e-8fd6-57b710613b89" height="500"/>
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/2306b875-1ea2-4424-8047-101fc3ba340b" height="500"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/df972e9d-cc46-4539-a7c1-50e1fa9be023" height="500"/>
 
 ### Product Review Screen
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/5b1aa684-8804-4047-82ef-1da60a579ee2" height="500"/>
