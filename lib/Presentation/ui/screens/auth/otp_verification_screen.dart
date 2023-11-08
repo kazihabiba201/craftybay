@@ -112,6 +112,8 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                         );
                       }
                       return ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.primaryColor),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             verifyOtp(controller);

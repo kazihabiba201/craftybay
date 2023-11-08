@@ -1,5 +1,6 @@
 import 'package:ecommerce/Presentation/state_holders/email_verification_controller.dart';
 import 'package:ecommerce/Presentation/ui/utility/Images_assets.dart';
+import 'package:ecommerce/Presentation/ui/utility/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -82,6 +83,8 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                       );
                     }
                     return ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.primaryColor),
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
                           verifyEmail(controller);
