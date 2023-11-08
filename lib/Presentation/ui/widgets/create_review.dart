@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 
 import 'package:ecommerce/Presentation/ui/screens/ReviewsScreen.dart';
@@ -16,7 +15,7 @@ class CreateReview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.white,
           title: const Text(
@@ -26,9 +25,7 @@ class CreateReview extends StatelessWidget {
           elevation: 0,
           leading: IconButton(
             onPressed: () {
-
               // Get.to(const ReviewScreen());
-
             },
             icon: const Icon(
               Icons.arrow_back,
@@ -39,33 +36,36 @@ class CreateReview extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
-            children:  [
-              const SizedBox(height:24),
-            TextFormField( decoration: const InputDecoration(
-              hintText: 'First Name',
-            ),
-
+            children: [
+              const SizedBox(height: 24),
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: 'First Name',
+                ),
               ),
-              const SizedBox(height:24),
-              TextFormField( decoration: const InputDecoration(
-                hintText: 'Last Name',
+              const SizedBox(height: 24),
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: 'Last Name',
+                ),
               ),
-
-              ),
-              const SizedBox(height:24),
-              TextFormField(  decoration:  const InputDecoration(
-                contentPadding:
-                EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                hintText: 'Write Review',
-
-              ),
-
+              const SizedBox(height: 24),
+              TextFormField(
+                decoration: const InputDecoration(
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  hintText: 'Write Review',
+                ),
                 maxLines: 11,
               ),
-              const SizedBox(height:16),
-              SizedBox(width: double.infinity, child: ElevatedButton( onPressed: (){
-
-              }, child: const Text('Submit'),),),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Submit'),
+                ),
+              ),
             ],
           ),
         ),

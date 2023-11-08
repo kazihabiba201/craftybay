@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/Presentation/state_holders/create_profile_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/read_profile_controller.dart';
 import 'package:ecommerce/Presentation/ui/screens/main_bottom_nav_screen.dart';
@@ -20,7 +19,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   final TextEditingController _cusCityTEController = TextEditingController();
   final TextEditingController _cusStateTEController = TextEditingController();
   final TextEditingController _cusPostcodeTEController =
-  TextEditingController();
+      TextEditingController();
   final TextEditingController _cusCountryTEController = TextEditingController();
   final TextEditingController _cusMobileTEController = TextEditingController();
   final TextEditingController _cusFaxTEController = TextEditingController();
@@ -29,14 +28,14 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   final TextEditingController _shipCityTEController = TextEditingController();
   final TextEditingController _shipStateTEController = TextEditingController();
   final TextEditingController _shipPostcodeTEController =
-  TextEditingController();
+      TextEditingController();
   final TextEditingController _shipCountryTEController =
-  TextEditingController();
+      TextEditingController();
   final TextEditingController _shipMobileTEController = TextEditingController();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   ReadProfileController readProfileController =
-  Get.put(ReadProfileController());
+      Get.put(ReadProfileController());
 
   @override
   void initState() {
@@ -94,8 +93,11 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
               key: _formKey,
               child: Column(
                 children: [
-                   Center(
-                    child:  SvgPicture.asset(ImageAssets.craftyBayLogoSVG, width: 100,),
+                  Center(
+                    child: SvgPicture.asset(
+                      ImageAssets.craftyBayLogoSVG,
+                      width: 100,
+                    ),
                   ),
                   const SizedBox(
                     height: 16,
@@ -103,8 +105,8 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                   Text(
                     'Update Profile',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 24,
-                    ),
+                          fontSize: 24,
+                        ),
                   ),
                   const SizedBox(
                     height: 4,
@@ -121,8 +123,8 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                   Text(
                     'User Details',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontSize: 20,
-                    ),
+                          fontSize: 20,
+                        ),
                   ),
                   const SizedBox(
                     height: 24,
@@ -278,8 +280,8 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                   Text(
                     'Shipping Details',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontSize: 20,
-                    ),
+                          fontSize: 20,
+                        ),
                   ),
                   const SizedBox(
                     height: 24,
@@ -416,17 +418,17 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     width: double.infinity,
                     child: GetBuilder<CreateProfileController>(
                         builder: (createProfileScreenController) {
-                          if (createProfileScreenController
-                              .createProfileInProgress) {
-                            return const Center(
-                              child: CircularProgressIndicator(),
-                            );
-                          }
-                          return ElevatedButton(
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                createProfileScreenController
-                                    .createProfile(
+                      if (createProfileScreenController
+                          .createProfileInProgress) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      return ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            createProfileScreenController
+                                .createProfile(
                                     _cusNameTEController.text.trim(),
                                     _cusAddTEController.text.trim(),
                                     _cusCityTEController.text.trim(),
@@ -442,29 +444,27 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                                     _shipPostcodeTEController.text.trim(),
                                     _shipCountryTEController.text.trim(),
                                     _shipMobileTEController.text.trim())
-                                    .then((result) {
-                                  if (result) {
-                                    Get.snackbar(
-                                        'Success', 'Profile Update successful.',
-                                        backgroundColor: Colors.green,
-                                        colorText: Colors.white,
-                                        borderRadius: 10,
-                                        snackPosition: SnackPosition.BOTTOM);
-                                    Get.offAll(() => const MainBottomNavScreen());
-                                  } else {
-                                    Get.snackbar('Failed',
-                                        'Profile Update failed! Try again.',
-                                        backgroundColor: Colors.red,
-                                        colorText: Colors.white,
-                                        borderRadius: 10,
-                                        snackPosition: SnackPosition.BOTTOM);
-                                  }
-                                });
+                                .then((result) {
+                              if (result) {
+                                Get.snackbar(
+                                    'Success', 'Profile Update successful.',
+                                    borderRadius: 10,
+                                    snackPosition: SnackPosition.BOTTOM);
+                                Get.offAll(() => const MainBottomNavScreen());
+                              } else {
+                                Get.snackbar('Failed',
+                                    'Profile Update failed! Try again.',
+                                    backgroundColor: Colors.red,
+                                    colorText: Colors.white,
+                                    borderRadius: 10,
+                                    snackPosition: SnackPosition.BOTTOM);
                               }
-                            },
-                            child: const Text('Update'),
-                          );
-                        }),
+                            });
+                          }
+                        },
+                        child: const Text('Update'),
+                      );
+                    }),
                   ),
                 ],
               ),

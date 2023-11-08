@@ -1,5 +1,3 @@
-
-
 import 'wishlist_data.dart';
 
 class WishListModel {

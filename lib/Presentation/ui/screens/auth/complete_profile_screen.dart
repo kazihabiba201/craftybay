@@ -1,5 +1,3 @@
-
-
 import 'package:ecommerce/Presentation/state_holders/create_profile_controller.dart';
 import 'package:ecommerce/Presentation/ui/screens/main_bottom_nav_screen.dart';
 import 'package:ecommerce/Presentation/ui/utility/Images_assets.dart';
@@ -15,7 +13,7 @@ class CreateProfileScreen extends StatelessWidget {
   final TextEditingController _cusCityTEController = TextEditingController();
   final TextEditingController _cusStateTEController = TextEditingController();
   final TextEditingController _cusPostcodeTEController =
-  TextEditingController();
+      TextEditingController();
   final TextEditingController _cusCountryTEController = TextEditingController();
   final TextEditingController _cusMobileTEController = TextEditingController();
   final TextEditingController _cusFaxTEController = TextEditingController();
@@ -24,9 +22,9 @@ class CreateProfileScreen extends StatelessWidget {
   final TextEditingController _shipCityTEController = TextEditingController();
   final TextEditingController _shipStateTEController = TextEditingController();
   final TextEditingController _shipPostcodeTEController =
-  TextEditingController();
+      TextEditingController();
   final TextEditingController _shipCountryTEController =
-  TextEditingController();
+      TextEditingController();
   final TextEditingController _shipMobileTEController = TextEditingController();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -42,8 +40,11 @@ class CreateProfileScreen extends StatelessWidget {
               key: _formKey,
               child: Column(
                 children: [
-                 Center(
-                    child: SvgPicture.asset(ImageAssets.craftyBayLogoSVG, width: 100,),
+                  Center(
+                    child: SvgPicture.asset(
+                      ImageAssets.craftyBayLogoSVG,
+                      width: 100,
+                    ),
                   ),
                   const SizedBox(
                     height: 16,
@@ -51,8 +52,8 @@ class CreateProfileScreen extends StatelessWidget {
                   Text(
                     'Complete Profile',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 24,
-                    ),
+                          fontSize: 24,
+                        ),
                   ),
                   const SizedBox(
                     height: 4,
@@ -65,7 +66,6 @@ class CreateProfileScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-
                   const SizedBox(
                     height: 24,
                   ),
@@ -220,8 +220,8 @@ class CreateProfileScreen extends StatelessWidget {
                   Text(
                     'Please share your Shipping Details',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontSize: 20,
-                    ),
+                          fontSize: 20,
+                        ),
                   ),
                   const SizedBox(
                     height: 24,
@@ -358,56 +358,54 @@ class CreateProfileScreen extends StatelessWidget {
                     width: double.infinity,
                     child: GetBuilder<CreateProfileController>(
                         builder: (createProfileScreenController) {
-                          if (createProfileScreenController
-                              .createProfileInProgress) {
-                            return const Center(
-                              child: CircularProgressIndicator(),
-                            );
-                          }
-                          return ElevatedButton(
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                createProfileScreenController
-                                    .createProfile(
-                                  _cusNameTEController.text.trim(),
-                                  _cusAddTEController.text.trim(),
-                                  _cusCityTEController.text.trim(),
-                                  _cusStateTEController.text.trim(),
-                                  _cusPostcodeTEController.text.trim(),
-                                  _cusCountryTEController.text.trim(),
-                                  _cusMobileTEController.text.trim(),
-                                  _cusFaxTEController.text.trim(),
-                                  _shipNameTEController.text.trim(),
-                                  _shipAddTEController.text.trim(),
-                                  _shipCityTEController.text.trim(),
-                                  _shipStateTEController.text.trim(),
-                                  _shipPostcodeTEController.text.trim(),
-                                  _shipCountryTEController.text.trim(),
-                                  _shipMobileTEController.text.trim(),
-                                )
-                                    .then((result) {
-                                  if (result) {
-                                    Get.snackbar(
-                                        'Success', 'Profile create successful.',
-                                        backgroundColor: Colors.green,
-                                        colorText: Colors.white,
-                                        borderRadius: 10,
-                                        snackPosition: SnackPosition.BOTTOM);
-                                    Get.offAll(() => const MainBottomNavScreen());
-                                  } else {
-                                    Get.snackbar('Failed',
-                                        'Profile create failed! Try again.',
-                                        backgroundColor: Colors.red,
-                                        colorText: Colors.white,
-                                        borderRadius: 10,
-                                        snackPosition: SnackPosition.BOTTOM);
-                                  }
-                                });
+                      if (createProfileScreenController
+                          .createProfileInProgress) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      return ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            createProfileScreenController
+                                .createProfile(
+                              _cusNameTEController.text.trim(),
+                              _cusAddTEController.text.trim(),
+                              _cusCityTEController.text.trim(),
+                              _cusStateTEController.text.trim(),
+                              _cusPostcodeTEController.text.trim(),
+                              _cusCountryTEController.text.trim(),
+                              _cusMobileTEController.text.trim(),
+                              _cusFaxTEController.text.trim(),
+                              _shipNameTEController.text.trim(),
+                              _shipAddTEController.text.trim(),
+                              _shipCityTEController.text.trim(),
+                              _shipStateTEController.text.trim(),
+                              _shipPostcodeTEController.text.trim(),
+                              _shipCountryTEController.text.trim(),
+                              _shipMobileTEController.text.trim(),
+                            )
+                                .then((result) {
+                              if (result) {
+                                Get.snackbar(
+                                    'Success', 'Profile create successful.',
+                                    borderRadius: 10,
+                                    snackPosition: SnackPosition.BOTTOM);
+                                Get.offAll(() => const MainBottomNavScreen());
+                              } else {
+                                Get.snackbar('Failed',
+                                    'Profile create failed! Try again.',
+                                    backgroundColor: Colors.red,
+                                    colorText: Colors.white,
+                                    borderRadius: 10,
+                                    snackPosition: SnackPosition.BOTTOM);
                               }
-                            },
-                            child: const Text('Complete'),
-                          );
-                        }),
+                            });
+                          }
+                        },
+                        child: const Text('Complete'),
+                      );
+                    }),
                   ),
                 ],
               ),

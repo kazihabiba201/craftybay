@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/data/models/product.dart';
 
 class ProductModel {
@@ -26,9 +25,3 @@ class ProductModel {
     return data;
   }
 }
-
-
-
-
-
-

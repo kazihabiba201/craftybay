@@ -37,4 +37,3 @@ class ProductListController extends GetxController {
     update();
   }
 }
-

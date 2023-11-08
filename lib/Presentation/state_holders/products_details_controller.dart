@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/data/models/network_response.dart';
 import 'package:ecommerce/data/models/product_details.dart';
 import 'package:ecommerce/data/models/product_details_model.dart';
@@ -6,8 +5,7 @@ import 'package:ecommerce/data/services/network_caller.dart';
 import 'package:ecommerce/data/utility/urls.dart';
 import 'package:get/get.dart';
 
-
-  class ProductDetailsController extends GetxController {
+class ProductDetailsController extends GetxController {
   bool _getProductDetailsInProgress = false;
 
   ProductDetails _productDetails = ProductDetails();
@@ -20,6 +18,7 @@ import 'package:get/get.dart';
   ProductDetails get productDetails => _productDetails;
 
   List<String> get availableColors => _availableColors;
+
   List<String> get availableSizes => _availableSizes;
 
   String get errorMessage => _errorMessage;
@@ -27,10 +26,12 @@ import 'package:get/get.dart';
   Future<bool> getProductDetails(int id) async {
     _getProductDetailsInProgress = true;
     update();
-    final NetworkResponse response = await NetworkCaller().getRequest(Urls.getProductDetails(id));
+    final NetworkResponse response =
+        await NetworkCaller().getRequest(Urls.getProductDetails(id));
     _getProductDetailsInProgress = false;
     if (response.isSuccess) {
-      _productDetails = ProductDetailsModel.fromJson(response.responseJson ?? {}).data!.first;
+      _productDetails =
+          ProductDetailsModel.fromJson(response.responseJson ?? {}).data!.first;
       _convertStringToColor(_productDetails.color ?? '');
       _convertStringToSizes(_productDetails.size ?? '');
       update();
@@ -55,5 +56,4 @@ import 'package:get/get.dart';
   void _convertStringToSizes(String sizes) {
     _availableSizes = sizes.split(',');
   }
-
 }

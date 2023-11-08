@@ -26,8 +26,6 @@ class ProductReviewModel {
   }
 }
 
-
-
 class Profile {
   int? id;
   String? cusName;

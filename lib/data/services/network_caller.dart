@@ -69,7 +69,8 @@ class NetworkCaller {
     await AuthController.clear();
     Navigator.pushAndRemoveUntil(
         CraftyBay.globalKey.currentContext!,
-        MaterialPageRoute(builder: (context) => const EmailVerificationScreen()),
-            (route) => false);
+        MaterialPageRoute(
+            builder: (context) => const EmailVerificationScreen()),
+        (route) => false);
   }
 }

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import 'dart:developer';
 
 import 'package:ecommerce/data/models/network_response.dart';
@@ -18,19 +12,17 @@ class WishListController extends GetxController {
 
   WishListModel _wishListModel = WishListModel();
 
-
   bool get getWishListInProgress => _getWishListInProgress;
 
   String get message => _message;
 
   WishListModel get wishListModel => _wishListModel;
 
-
-
   Future<bool> getWishList() async {
     _getWishListInProgress = true;
     update();
-    final NetworkResponse response = await NetworkCaller().getRequest(Urls.getWishList);
+    final NetworkResponse response =
+        await NetworkCaller().getRequest(Urls.getWishList);
 
     _getWishListInProgress = false;
     update();
@@ -40,14 +32,9 @@ class WishListController extends GetxController {
       update();
       log(_wishListModel.toString());
       return true;
-    }
-    else
-    {
+    } else {
       _message = 'GetWishList failed! Try again';
-      return false;           }
+      return false;
+    }
   }
-
-
-
-
 }

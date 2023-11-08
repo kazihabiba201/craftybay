@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/Presentation/state_holders/delete_wish_list_item_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/wish_list_controller.dart';
 import 'package:ecommerce/Presentation/ui/screens/product_details_screen.dart';
@@ -9,6 +8,7 @@ import 'package:get/get.dart';
 
 class WishListProductCard extends StatelessWidget {
   final WishListData wishData;
+
   const WishListProductCard({
     super.key,
     required this.wishData,
@@ -20,7 +20,7 @@ class WishListProductCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(8),
       onTap: () {
         Get.to(
-              () => ProductDetailsScreen(
+          () => ProductDetailsScreen(
             productId: wishData.productId!,
           ),
         );
@@ -46,7 +46,7 @@ class WishListProductCard extends StatelessWidget {
                 child: Image.network(
                   wishData.product?.image ??
                       'https://assets.adidas.com/images/w_600,f_auto,q_auto/f9d52817f7524d3fb442af3b01717dfa_9366/Runfalcon_3.0_Shoes_Black_HQ3790_01_standard.jpg',
-                     fit: BoxFit.cover,
+                  fit: BoxFit.cover,
                 ),
               ),
               Padding(
@@ -117,11 +117,11 @@ class WishListProductCard extends StatelessWidget {
                                   ),
                                   color: Colors.white,
                                   onPressed: () {
-                              Get.find<DeleteWishItemController>()
-                                   .deleteWishItem(
-                                       wishData.productId.toString());
-                                 Get.find<WishListController>()
-                                    .getWishList();
+                                    Get.find<DeleteWishItemController>()
+                                        .deleteWishItem(
+                                            wishData.productId.toString());
+                                    Get.find<WishListController>()
+                                        .getWishList();
                                   },
                                 ),
                               ),

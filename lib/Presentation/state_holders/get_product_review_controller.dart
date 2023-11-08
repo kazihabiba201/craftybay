@@ -1,4 +1,3 @@
-
 import 'dart:developer';
 
 import 'package:ecommerce/data/models/network_response.dart';
@@ -11,15 +10,18 @@ class GetProductReviewController extends GetxController {
   bool _productReviewInProgress = false;
   String _message = '';
   ProductReviewModel _getProductReviewModel = ProductReviewModel();
+
   bool get productReviewInProgress => _productReviewInProgress;
 
   String get message => _message;
+
   ProductReviewModel get getProductReviewModel => _getProductReviewModel;
+
   Future<bool> getProductReview(int id) async {
     _productReviewInProgress = true;
     update();
     final NetworkResponse response =
-    await NetworkCaller().getRequest(Urls.getProductReview(id));
+        await NetworkCaller().getRequest(Urls.getProductReview(id));
     _productReviewInProgress = false;
     if (response.isSuccess) {
       _getProductReviewModel =

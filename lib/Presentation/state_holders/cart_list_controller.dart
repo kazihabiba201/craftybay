@@ -96,7 +96,8 @@ class CartListController extends GetxController {
   Future<bool> getCartList() async {
     _getCartListInProgress = true;
     update();
-    final NetworkResponse response = await NetworkCaller().getRequest(Urls.getCartList);
+    final NetworkResponse response =
+        await NetworkCaller().getRequest(Urls.getCartList);
     _getCartListInProgress = false;
     if (response.isSuccess) {
       _cartListModel = CartListModel.fromJson(response.responseJson!);
@@ -112,7 +113,8 @@ class CartListController extends GetxController {
   Future<bool> removeFromCart(int id) async {
     _getCartListInProgress = true;
     update();
-    final NetworkResponse response = await NetworkCaller().getRequest(Urls.removeFromCart(id));
+    final NetworkResponse response =
+        await NetworkCaller().getRequest(Urls.removeFromCart(id));
     _getCartListInProgress = false;
     if (response.isSuccess) {
       _cartListModel.data?.removeWhere((element) => element.productId == id);
@@ -125,10 +127,10 @@ class CartListController extends GetxController {
     }
   }
 
-
-
   void changeItem(int cartId, int noOfItems) {
-    _cartListModel.data?.firstWhere((cartData) => cartData.id == cartId).quantity = noOfItems;
+    _cartListModel.data
+        ?.firstWhere((cartData) => cartData.id == cartId)
+        .quantity = noOfItems;
     _calculateTotalPrice();
   }
 
@@ -140,5 +142,4 @@ class CartListController extends GetxController {
     }
     update();
   }
-
 }

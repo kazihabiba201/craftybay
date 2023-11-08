@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:ecommerce/Presentation/state_holders/add_to_cart_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/cart_list_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/category_controller.dart';

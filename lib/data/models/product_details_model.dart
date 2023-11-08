@@ -1,6 +1,5 @@
 import 'package:ecommerce/data/models/product_details.dart';
 
-
 class ProductDetailsModel {
   String? msg;
   List<ProductDetails>? data;
@@ -26,6 +25,3 @@ class ProductDetailsModel {
     return data;
   }
 }
-
-
-

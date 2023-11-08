@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 
 class CircleIconButton extends StatelessWidget {
   const CircleIconButton({super.key, required this.icon, required this.onTap});
@@ -13,13 +11,15 @@ class CircleIconButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(30),
-child: CircleAvatar(
-  radius: 14,
-  backgroundColor: Colors.grey.shade300,
-  child: Icon(icon, color: Colors.grey,size: 16,),
-
-
-),
+      child: CircleAvatar(
+        radius: 14,
+        backgroundColor: Colors.grey.shade300,
+        child: Icon(
+          icon,
+          color: Colors.grey,
+          size: 16,
+        ),
+      ),
     );
   }
 }

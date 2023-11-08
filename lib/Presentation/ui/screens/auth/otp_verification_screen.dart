@@ -12,7 +12,9 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 
 class OTPVerificationScreen extends StatefulWidget {
   final String email;
-  const OTPVerificationScreen({Key? key, required this.email}) : super(key: key);
+
+  const OTPVerificationScreen({Key? key, required this.email})
+      : super(key: key);
 
   @override
   State<OTPVerificationScreen> createState() => _OTPVerificationScreenState();
@@ -22,9 +24,9 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _otpTEController = TextEditingController();
   final EmailVerificationController _emailVerificationController =
-  Get.find<EmailVerificationController>();
+      Get.find<EmailVerificationController>();
   final OtpVerificationController _otpVerificationController =
-  Get.find<OtpVerificationController>();
+      Get.find<OtpVerificationController>();
 
   @override
   void initState() {
@@ -32,6 +34,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
     _otpVerificationController.seconds = 120;
     _otpVerificationController.startTimer();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +97,6 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                     onCompleted: (v) {},
                     onChanged: (value) {},
                     beforeTextPaste: (text) {
-
                       return true;
                     },
                     appContext: context,
@@ -104,65 +106,64 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                     width: double.infinity,
                     child: GetBuilder<OtpVerificationController>(
                         builder: (controller) {
-                          if (controller.otpVerificationInProgress){
-                            return const Center(child: CircularProgressIndicator(),);
-                          }
-                          return  ElevatedButton(
-                              onPressed: () {
-                                if (_formKey.currentState!.validate()) {
-                                verifyOtp(controller);}
-                              },
-                              child: const Text('Next'),
-
-                          );
-                        }
-                    ),
-                  ),
-
-                  const SizedBox(height: 24),
-    GetBuilder<OtpVerificationController>(
-    builder: (otpVerificationController) {
-    return Column(
-                    children: [
-                      RichText(
-                        text: TextSpan(
-                            style: const TextStyle(color: Colors.grey),
-                            children: [
-                              const TextSpan(text: 'This code will expire in'),
-                              TextSpan(
-                                text: ' ${otpVerificationController.seconds}',
-                                style: TextStyle(
-                                  color:  otpVerificationController.seconds == 0
-                                      ? Colors.grey
-                                      : AppColors.primaryColor,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              )
-                            ]),
-                      ),
-
-
-                TextButton(
+                      if (controller.otpVerificationInProgress) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      return ElevatedButton(
                         onPressed: () {
-                          if (_otpVerificationController.seconds == 0) {
-                            _emailVerificationController
-                                .verifyEmail(widget.email);
-                            _otpVerificationController.seconds = 120;
-                            _otpVerificationController.startTimer();
+                          if (_formKey.currentState!.validate()) {
+                            verifyOtp(controller);
                           }
-
                         },
-                  style: TextButton.styleFrom(
-                    foregroundColor:
-                    _otpVerificationController.seconds == 0
-                        ? AppColors.primaryColor
-                        : Colors.grey,
+                        child: const Text('Next'),
+                      );
+                    }),
                   ),
-                        child: const Text('Resend'),
-
-
-                 ),
-                 ], );}),
+                  const SizedBox(height: 24),
+                  GetBuilder<OtpVerificationController>(
+                      builder: (otpVerificationController) {
+                    return Column(
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                              style: const TextStyle(color: Colors.grey),
+                              children: [
+                                const TextSpan(
+                                    text: 'This code will expire in'),
+                                TextSpan(
+                                  text: ' ${otpVerificationController.seconds}',
+                                  style: TextStyle(
+                                    color:
+                                        otpVerificationController.seconds == 0
+                                            ? Colors.grey
+                                            : AppColors.primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )
+                              ]),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            if (_otpVerificationController.seconds == 0) {
+                              _emailVerificationController
+                                  .verifyEmail(widget.email);
+                              _otpVerificationController.seconds = 120;
+                              _otpVerificationController.startTimer();
+                            }
+                          },
+                          style: TextButton.styleFrom(
+                            foregroundColor:
+                                _otpVerificationController.seconds == 0
+                                    ? AppColors.primaryColor
+                                    : Colors.grey,
+                          ),
+                          child: const Text('Resend'),
+                        ),
+                      ],
+                    );
+                  }),
                 ],
               ),
             ),
@@ -171,15 +172,13 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
       ),
     );
   }
+
   Future<void> verifyOtp(OtpVerificationController controller) async {
     final response =
-    await controller.verifyOtp(widget.email, _otpTEController.text.trim());
+        await controller.verifyOtp(widget.email, _otpTEController.text.trim());
     if (response) {
       Get.snackbar('Success', 'OTP verification successful.',
-          backgroundColor: Colors.green,
-          colorText: Colors.white,
-          borderRadius: 10,
-          snackPosition: SnackPosition.BOTTOM);
+          borderRadius: 10, snackPosition: SnackPosition.BOTTOM);
       await Get.find<ReadProfileController>().readProfileData();
 
       Get.find<ReadProfileController>().readProfileModel.data == null
@@ -196,4 +195,3 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
     }
   }
 }
- 

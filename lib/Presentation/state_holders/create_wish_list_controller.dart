@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/data/models/network_response.dart';
 import 'package:ecommerce/data/services/network_caller.dart';
 import 'package:ecommerce/data/utility/urls.dart';
@@ -13,11 +12,11 @@ class CreateWishListController extends GetxController {
   bool _createWishListInProgress = false;
 
   Future<bool> createWishList(int id) async {
-    _createWishListInProgress =true;
+    _createWishListInProgress = true;
     update();
 
     final NetworkResponse response =
-    await NetworkCaller().getRequest(Urls.createWishListItem(id));
+        await NetworkCaller().getRequest(Urls.createWishListItem(id));
     if (response.isSuccess) {
       return true;
     } else {

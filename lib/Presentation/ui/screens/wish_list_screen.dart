@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/Presentation/state_holders/main_bottom_nav_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/wish_list_controller.dart';
 import 'package:ecommerce/Presentation/ui/widgets/home/wishList_product_card.dart';
@@ -30,20 +29,21 @@ class _WishListScreenState extends State<WishListScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: const Text(
-            'Wish List',
-            style: TextStyle(color: Colors.black),
-          ),
-          elevation: 0,
+            backgroundColor: Colors.white,
+            title: const Text(
+              'Wish List',
+              style: TextStyle(color: Colors.black),
+            ),
+            elevation: 0,
             leading: IconButton(
-              onPressed: (){
+              onPressed: () {
                 Get.find<MainBottomNavController>().backToHome();
               },
-              icon: const Icon(Icons.arrow_back, color: Colors.black54,),
-            )
-
-        ),
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.black54,
+              ),
+            )),
         body: GetBuilder<WishListController>(
           builder: (wishListController) {
             if (wishListController.getWishListInProgress) {
@@ -63,7 +63,7 @@ class _WishListScreenState extends State<WishListScreen> {
               },
               child: Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20.0),
+                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20.0),
                 child: GridView.builder(
                   itemCount: wishListController.wishListModel.data?.length ?? 0,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

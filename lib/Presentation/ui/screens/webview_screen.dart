@@ -8,7 +8,6 @@ class WebViewScreen extends StatefulWidget {
 
   final String paymentUrl;
 
-
   @override
   State<WebViewScreen> createState() => _WebViewScreenState();
 }
@@ -25,9 +24,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
       ..setBackgroundColor(const Color(0x00000000))
       ..setNavigationDelegate(
         NavigationDelegate(
-          onProgress: (int progress) {
-
-          },
+          onProgress: (int progress) {},
           onPageStarted: (String url) {},
           onPageFinished: (String url) {
             print('entered');
@@ -71,7 +68,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
 
   void navigateBack() {
     Navigator.pop(context);
-    Get.snackbar('Payment successful',
+    Get.snackbar(
+      'Payment successful',
       'Your order has been confirmed',
       snackPosition: SnackPosition.BOTTOM,
     );

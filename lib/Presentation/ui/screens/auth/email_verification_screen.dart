@@ -9,7 +9,6 @@ import 'otp_verification_screen.dart';
 class EmailVerificationScreen extends StatefulWidget {
   const EmailVerificationScreen({Key? key}) : super(key: key);
 
-
   @override
   State<EmailVerificationScreen> createState() =>
       _EmailVerificationScreenState();
@@ -17,8 +16,7 @@ class EmailVerificationScreen extends StatefulWidget {
 
 class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
   final TextEditingController _emailTEController = TextEditingController();
-final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +84,7 @@ final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
                     return ElevatedButton(
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
-verifyEmail(controller);
+                          verifyEmail(controller);
                         }
                       },
                       child: const Text('Next'),
@@ -102,10 +100,13 @@ verifyEmail(controller);
   }
 
   Future<void> verifyEmail(EmailVerificationController controller) async {
-    final response =
-        await controller.verifyEmail(_emailTEController.text.trim(), );
+    final response = await controller.verifyEmail(
+      _emailTEController.text.trim(),
+    );
     if (response) {
-      Get.offAll(() =>  OTPVerificationScreen(email: _emailTEController.text.trim(),));
+      Get.offAll(() => OTPVerificationScreen(
+            email: _emailTEController.text.trim(),
+          ));
     } else {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

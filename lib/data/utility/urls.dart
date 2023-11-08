@@ -34,7 +34,6 @@ class Urls {
 
   static String readProfileData = '$_baseUrl/ReadProfile';
 
-  static String  createCompleteProfile = '$_baseUrl/CreateProfile';
+  static String createCompleteProfile = '$_baseUrl/CreateProfile';
   static const String logOut = '$_baseUrl/logout';
 }
-

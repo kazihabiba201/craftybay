@@ -63,8 +63,12 @@ class _CategoryListScreenState extends State<CategoryListScreen> {
                       child: CategoryCard(
                         categoryData:
                             categoryController.categoryModel.data![index],
-                        onTap: (){
-                          Get.to(ProductListScreen(remark: categoryController.categoryModel.data![index].categoryName, categoryId:  categoryController.categoryModel.data![index].id!));
+                        onTap: () {
+                          Get.to(ProductListScreen(
+                              remark: categoryController
+                                  .categoryModel.data![index].categoryName,
+                              categoryId: categoryController
+                                  .categoryModel.data![index].id!));
                         },
                       ),
                     );

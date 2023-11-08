@@ -3,16 +3,16 @@ import 'package:ecommerce/data/services/network_caller.dart';
 import 'package:ecommerce/data/utility/urls.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
-
-class CreateProfileController extends GetxController{
-
+class CreateProfileController extends GetxController {
   bool _createProfileInProgress = false;
+
   bool get createProfileInProgress => _createProfileInProgress;
 
-  String ? _message;
-  String ? get message => _message;
+  String? _message;
 
-  Future<bool>createProfile(
+  String? get message => _message;
+
+  Future<bool> createProfile(
     String cusName,
     cusAddress,
     cusCity,
@@ -29,11 +29,11 @@ class CreateProfileController extends GetxController{
     shipCountry,
     shipPhone,
   ) async {
-
     _createProfileInProgress = true;
     update();
 
-    final NetworkResponse response = await NetworkCaller().postRequest(Urls.createCompleteProfile, <String,dynamic>{
+    final NetworkResponse response = await NetworkCaller()
+        .postRequest(Urls.createCompleteProfile, <String, dynamic>{
       "cus_name": cusName,
       "cus_add": cusAddress,
       "cus_city": cusCity,
@@ -53,13 +53,12 @@ class CreateProfileController extends GetxController{
 
     _createProfileInProgress = false;
 
-    if(response.isSuccess){
+    if (response.isSuccess) {
       update();
       return true;
-    }else{
+    } else {
       _message = "failed.try again";
       return false;
     }
-
   }
 }

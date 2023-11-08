@@ -21,7 +21,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -30,8 +29,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,37 +41,40 @@ class _HomeScreenState extends State<HomeScreen> {
               ImageAssets.craftyBayNavLogoSVG,
             ),
             const Spacer(),
-        CircleIconButton(
-        icon: Icons.light_mode_outlined,
-        onTap: () {
-
-          ThemeModeController().changeThemeMode();
-
-    }),
-
-            const SizedBox(
-              width: 8,
-            ),
-            CircleIconButton(icon: Icons.person, onTap: ()async {
-              await Get.find<ReadProfileController>().readProfileData();
-              Get.to(() => CreateProfileScreen());
-            },),
+            CircleIconButton(
+                icon: Icons.light_mode_outlined,
+                onTap: () {
+                  ThemeModeController().changeThemeMode();
+                }),
             const SizedBox(
               width: 8,
             ),
             CircleIconButton(
-              icon: Icons.login_outlined, onTap: () async {
-              await AuthController.clear();
-              Get.to(const SplashScreen());
-            },),
+              icon: Icons.person,
+              onTap: () async {
+                await Get.find<ReadProfileController>().readProfileData();
+                Get.to(() => CreateProfileScreen());
+              },
+            ),
             const SizedBox(
               width: 8,
             ),
             CircleIconButton(
-                icon: Icons.call,
+              icon: Icons.login_outlined,
+              onTap: () async {
+                await AuthController.clear();
+                Get.to(const SplashScreen());
+              },
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            CircleIconButton(
+              icon: Icons.call,
               onTap: () {
-           launch('tel:+08801787099258');
-              },)
+                launch('tel:+08801787099258');
+              },
+            )
           ],
         ),
       ),
@@ -142,9 +142,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemBuilder: (context, index) {
                       return CategoryCard(
                         categoryData:
-                        categoryController.categoryModel.data![index],
-                        onTap: (){
-                          Get.to(ProductListScreen(categoryId:  categoryController.categoryModel.data![index].id!));
+                            categoryController.categoryModel.data![index],
+                        onTap: () {
+                          Get.to(ProductListScreen(
+                              categoryId: categoryController
+                                  .categoryModel.data![index].id!));
                         },
                       );
                     },
@@ -157,9 +159,10 @@ class _HomeScreenState extends State<HomeScreen> {
               SectionHeader(
                 title: 'Popular',
                 onTap: () {
-                 Get.to( ProductListScreen(
-                   productModel: Get.find<PopularProductController>().popularProductModel,
-                 ));
+                  Get.to(ProductListScreen(
+                    productModel: Get.find<PopularProductController>()
+                        .popularProductModel,
+                  ));
                 },
               ),
               SizedBox(
@@ -189,8 +192,9 @@ class _HomeScreenState extends State<HomeScreen> {
               SectionHeader(
                 title: 'Special',
                 onTap: () {
-                  Get.to( ProductListScreen(
-                    productModel: Get.find<SpecialProductController>().specialProductModel,
+                  Get.to(ProductListScreen(
+                    productModel: Get.find<SpecialProductController>()
+                        .specialProductModel,
                   ));
                 },
               ),
@@ -198,52 +202,55 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 165,
                   child: GetBuilder<SpecialProductController>(
                       builder: (productController) {
-                        if (productController.getSpecialProductsInProgress) {
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        }
-                        return ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: productController
+                    if (productController.getSpecialProductsInProgress) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                    return ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: productController
                                 .specialProductModel.data?.length ??
-                                0,
-                            itemBuilder: (context, index) {
-                              return ProductCard(
-                                product: productController
-                                    .specialProductModel.data![index],
-                              );
-                            });
-                      })),
+                            0,
+                        itemBuilder: (context, index) {
+                          return ProductCard(
+                            product: productController
+                                .specialProductModel.data![index],
+                          );
+                        });
+                  })),
               const SizedBox(
                 height: 16,
               ),
               SectionHeader(
                 title: 'New',
                 onTap: () {
-                  Get.to( ProductListScreen(
-                    productModel: Get.find<NewProductController>().newProductModel,
+                  Get.to(ProductListScreen(
+                    productModel:
+                        Get.find<NewProductController>().newProductModel,
                   ));
                 },
               ),
               SizedBox(
-                  height: 165,
-                  child: GetBuilder<NewProductController>(
-                      builder: (productController) {
-                        if (productController.getNewProductsInProgress) {
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        }
-                        return ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: productController.newProductModel.data?.length ?? 0,
-                            itemBuilder: (context, index) {
-                              return ProductCard(
-                                product: productController.newProductModel.data![index],
-                              );
-                            });
-                      }),
+                height: 165,
+                child: GetBuilder<NewProductController>(
+                    builder: (productController) {
+                  if (productController.getNewProductsInProgress) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                  return ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount:
+                          productController.newProductModel.data?.length ?? 0,
+                      itemBuilder: (context, index) {
+                        return ProductCard(
+                          product:
+                              productController.newProductModel.data![index],
+                        );
+                      });
+                }),
               ),
             ],
           ),

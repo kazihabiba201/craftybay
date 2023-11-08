@@ -12,7 +12,7 @@ class ProductImageSlider extends StatefulWidget {
 }
 
 class _ProductImageSliderState extends State<ProductImageSlider> {
-  final ValueNotifier<int>_selectedSlider = ValueNotifier(0);
+  final ValueNotifier<int> _selectedSlider = ValueNotifier(0);
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +26,21 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
             viewportFraction: 1,
             onPageChanged: (int page, _) {
               _selectedSlider.value = page;
-            },),
-
+            },
+          ),
           items: widget.imageList.map((i) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
-                  width: MediaQuery
-                      .of(context)
-                      .size
-                      .width,
+                  width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     color: Colors.grey.shade100,
-                    image: DecorationImage(image: NetworkImage(i), fit: BoxFit.cover,
-                    ),),
+                    image: DecorationImage(
+                      image: NetworkImage(i),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                   alignment: Alignment.center,
-
                 );
               },
             );
@@ -49,7 +48,8 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
         ),
         Positioned(
           bottom: 10,
-          left: 0, right: 0,
+          left: 0,
+          right: 0,
           child: ValueListenableBuilder(
               valueListenable: _selectedSlider,
               builder: (context, value, _) {
@@ -62,8 +62,9 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
                       margin: const EdgeInsets.symmetric(horizontal: 4),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color:
-                          value == i ? AppColors.primaryColor : Colors.white),
+                          color: value == i
+                              ? AppColors.primaryColor
+                              : Colors.white),
                     ),
                   );
                 }
@@ -77,4 +78,3 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
     );
   }
 }
-

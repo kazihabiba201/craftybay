@@ -10,14 +10,16 @@ class NewProductController extends GetxController {
   String _errorMessage = '';
 
   bool get getNewProductsInProgress => _getNewProductsInProgress;
+
   ProductModel get newProductModel => _newProductModel;
+
   String get errorMessage => _errorMessage;
 
   Future<bool> getNewProducts() async {
     _getNewProductsInProgress = true;
     update();
     final NetworkResponse response =
-    await NetworkCaller().getRequest(Urls.getProductsByRemarks('new'));
+        await NetworkCaller().getRequest(Urls.getProductsByRemarks('new'));
     _getNewProductsInProgress = false;
     if (response.isSuccess) {
       _newProductModel = ProductModel.fromJson(response.responseJson ?? {});

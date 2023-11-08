@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/data/models/network_response.dart';
 import 'package:ecommerce/data/models/read_profile_model.dart';
 import 'package:ecommerce/data/services/network_caller.dart';
@@ -15,7 +14,7 @@ class ReadProfileController extends GetxController {
 
   Future<bool> readProfileData() async {
     final NetworkResponse response =
-    await NetworkCaller().getRequest(Urls.readProfileData, isLogin: true);
+        await NetworkCaller().getRequest(Urls.readProfileData, isLogin: true);
     if (response.isSuccess) {
       _readProfileModel =
           ReadProfileModel.fromJson(response.responseJson ?? {});

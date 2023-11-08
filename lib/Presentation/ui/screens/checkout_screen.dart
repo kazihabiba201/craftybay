@@ -1,5 +1,3 @@
-
-
 import 'package:ecommerce/Presentation/state_holders/create_invoice_controller.dart';
 import 'package:ecommerce/Presentation/ui/screens/webview_screen.dart';
 import 'package:ecommerce/data/models/payment_method.dart';
@@ -35,35 +33,38 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
         appBar: AppBar(
           title: const Text('Check out'),
         ),
-        body: GetBuilder<CreateInvoiceController>(
-            builder: (controller) {
-              if (controller.inProgress) {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-              if (!isCompleted) {
-                return const Center(
-                  child: Text('Please complete your profile first'),
-                );
-              }
-              return ListView.separated(
-                itemCount: controller.invoiceCreateResponseModel?.paymentMethod?.length ?? 0,
-                itemBuilder: (context, index) {
-                  final PaymentMethod paymentMethod =
+        body: GetBuilder<CreateInvoiceController>(builder: (controller) {
+          if (controller.inProgress) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          if (!isCompleted) {
+            return const Center(
+              child: Text('Please complete your profile first'),
+            );
+          }
+          return ListView.separated(
+            itemCount:
+                controller.invoiceCreateResponseModel?.paymentMethod?.length ??
+                    0,
+            itemBuilder: (context, index) {
+              final PaymentMethod paymentMethod =
                   controller.invoiceCreateResponseModel!.paymentMethod![index];
-                  return ListTile(
-                    leading: Image.network(paymentMethod.logo ?? '', width: 60,),
-                    title: Text(paymentMethod.name ?? ''),
-                    onTap: () {
-                      Get.off(() => WebViewScreen(paymentUrl: paymentMethod.redirectGatewayURL!));
-                    },
-                  );
+              return ListTile(
+                leading: Image.network(
+                  paymentMethod.logo ?? '',
+                  width: 60,
+                ),
+                title: Text(paymentMethod.name ?? ''),
+                onTap: () {
+                  Get.off(() => WebViewScreen(
+                      paymentUrl: paymentMethod.redirectGatewayURL!));
                 },
-                separatorBuilder: (_, __) => const Divider(),
               );
-            }
-        )
-    );
+            },
+            separatorBuilder: (_, __) => const Divider(),
+          );
+        }));
   }
 }

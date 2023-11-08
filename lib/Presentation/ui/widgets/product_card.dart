@@ -15,7 +15,9 @@ class ProductCard extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(8),
       onTap: () {
-        Get.to(ProductDetailsScreen(productId: product.id!,));
+        Get.to(ProductDetailsScreen(
+          productId: product.id!,
+        ));
       },
       child: Card(
         shadowColor: AppColors.primaryColor.withOpacity(0.1),
@@ -34,7 +36,10 @@ class ProductCard extends StatelessWidget {
                     topRight: Radius.circular(8),
                   ),
                   image: DecorationImage(
-                    image: NetworkImage(product.image ?? '',),fit: BoxFit.cover,
+                    image: NetworkImage(
+                      product.image ?? '',
+                    ),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),

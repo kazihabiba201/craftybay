@@ -13,22 +13,22 @@ class CategoriesController extends GetxController {
   ProductModel get categoryModel => _categoriesModel;
 
   bool get getCategoriesInProgress => _getCategoriesInProgress;
+
   String get message => _message;
 
   Future<bool> getCategories() async {
     _getCategoriesInProgress = true;
     update();
-    final NetworkResponse response = await NetworkCaller().getRequest(Urls.getCategories);
+    final NetworkResponse response =
+        await NetworkCaller().getRequest(Urls.getCategories);
     _getCategoriesInProgress = false;
 
     if (response.isSuccess) {
-      _categoriesModel = ProductModel.fromJson(response.responseJson ?? {} );
+      _categoriesModel = ProductModel.fromJson(response.responseJson ?? {});
       update();
       return true;
-    }
-    else
-    {
-      _message ='Category data fetch failed!';
+    } else {
+      _message = 'Category data fetch failed!';
       update();
       return false;
     }

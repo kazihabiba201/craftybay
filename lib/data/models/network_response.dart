@@ -1,4 +1,4 @@
-class NetworkResponse{
+class NetworkResponse {
   final bool isSuccess;
   final int statusCode;
   final Map<String, dynamic>? responseJson;

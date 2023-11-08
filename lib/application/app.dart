@@ -4,13 +4,11 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:ecommerce/Presentation/ui/screens/splash_screens.dart';
 import 'package:ecommerce/application/state_holder_binder.dart';
 
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../Presentation/ui/utility/app_colors.dart';
 
-// final ThemeModeController themeModeController = ThemeModeController();
 
 class CraftyBay extends StatefulWidget {
   static GlobalKey<NavigatorState> globalKey = GlobalKey<NavigatorState>();
@@ -37,13 +35,15 @@ class _CraftyBayState extends State<CraftyBay> {
   }
 
   void checkInternetConnectivityStatus() {
-    _connectivityStatusStream = Connectivity().onConnectivityChanged.listen((status) {
+    _connectivityStatusStream =
+        Connectivity().onConnectivityChanged.listen((status) {
       handleConnectivityStates(status);
     });
   }
 
   void handleConnectivityStates(ConnectivityResult status) {
-    if (status != ConnectivityResult.mobile && status != ConnectivityResult.wifi) {
+    if (status != ConnectivityResult.mobile &&
+        status != ConnectivityResult.wifi) {
       Get.showSnackbar(const GetSnackBar(
         title: 'No internet!',
         message: 'Please check your internet connectivity',
@@ -58,7 +58,6 @@ class _CraftyBayState extends State<CraftyBay> {
 
   @override
   Widget build(BuildContext context) {
-
     return GetMaterialApp(
       navigatorKey: CraftyBay.globalKey,
 
@@ -67,12 +66,14 @@ class _CraftyBayState extends State<CraftyBay> {
       initialBinding: StateHolderBinder(),
       theme: ThemeData(
           primarySwatch:
-          MaterialColor(AppColors.primaryColor.value, AppColors().color),
+              MaterialColor(AppColors.primaryColor.value, AppColors().color),
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 12),
               textStyle: const TextStyle(
-                  fontSize: 16, letterSpacing: 0.5, fontWeight: FontWeight.w600),
+                  fontSize: 16,
+                  letterSpacing: 0.5,
+                  fontWeight: FontWeight.w600),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -80,26 +81,24 @@ class _CraftyBayState extends State<CraftyBay> {
           ),
           inputDecorationTheme: const InputDecorationTheme(
             contentPadding: EdgeInsets.symmetric(horizontal: 16),
-            border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey)
-            ),
-            enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey)
-            ),
-            disabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey)
-            ),
-          )
-      ),
+            border:
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+            enabledBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+            disabledBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+          )),
       darkTheme: ThemeData(
           brightness: Brightness.dark,
           primarySwatch:
-          MaterialColor(AppColors.primaryColor.value, AppColors().color),
+              MaterialColor(AppColors.primaryColor.value, AppColors().color),
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 12),
               textStyle: const TextStyle(
-                  fontSize: 16, letterSpacing: 0.5, fontWeight: FontWeight.w600),
+                  fontSize: 16,
+                  letterSpacing: 0.5,
+                  fontWeight: FontWeight.w600),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -107,17 +106,13 @@ class _CraftyBayState extends State<CraftyBay> {
           ),
           inputDecorationTheme: const InputDecorationTheme(
             contentPadding: EdgeInsets.symmetric(horizontal: 16),
-            border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey)
-            ),
-            enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey)
-            ),
-            disabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey)
-            ),
-          )
-      ),
+            border:
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+            enabledBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+            disabledBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+          )),
       // themeMode: themeMode,
       // }
     );

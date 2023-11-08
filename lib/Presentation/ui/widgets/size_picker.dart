@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class SizePicker extends StatefulWidget {
   const SizePicker(
       {super.key,
-        required this.sizes,
-        required this.onSelected,
-        required this.initialSelected});
+      required this.sizes,
+      required this.onSelected,
+      required this.initialSelected});
 
   final List<String> sizes;
   final Function(int selectIndex) onSelected;
@@ -45,7 +45,7 @@ class _SizePickerState extends State<SizePicker> {
                 border: Border.all(color: Colors.black12),
                 borderRadius: BorderRadius.circular(4),
                 color:
-                _selectedSizeIndex == index ? AppColors.primaryColor : null,
+                    _selectedSizeIndex == index ? AppColors.primaryColor : null,
               ),
               alignment: Alignment.center,
               child: Text(

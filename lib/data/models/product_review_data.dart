@@ -1,4 +1,3 @@
-
 import 'product_review_model.dart';
 
 class ProductReviewData {
@@ -13,13 +12,13 @@ class ProductReviewData {
 
   ProductReviewData(
       {this.id,
-        this.description,
-        this.rating,
-        this.customerId,
-        this.productId,
-        this.createdAt,
-        this.updatedAt,
-        this.profile});
+      this.description,
+      this.rating,
+      this.customerId,
+      this.productId,
+      this.createdAt,
+      this.updatedAt,
+      this.profile});
 
   ProductReviewData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -30,7 +29,7 @@ class ProductReviewData {
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     profile =
-    json['profile'] != null ? Profile.fromJson(json['profile']) : null;
+        json['profile'] != null ? Profile.fromJson(json['profile']) : null;
   }
 
   Map<String, dynamic> toJson() {

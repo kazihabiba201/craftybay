@@ -3,24 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get/get.dart';
 
-class ThemeModeController{
-  final _getStorage  = GetStorage();
+class ThemeModeController {
+  final _getStorage = GetStorage();
   final storageKey = "isDarkMode";
 
-  ThemeMode getThemeMode(){
+  ThemeMode getThemeMode() {
     return isSavedDarkMode() ? ThemeMode.dark : ThemeMode.light;
   }
-  bool isSavedDarkMode(){
+
+  bool isSavedDarkMode() {
     return _getStorage.read(storageKey) ?? false;
   }
 
-  void saveThemeMode(isDarkMode){
+  void saveThemeMode(isDarkMode) {
     _getStorage.write(storageKey, isDarkMode);
   }
 
-  void changeThemeMode(){
+  void changeThemeMode() {
     Get.changeThemeMode(isSavedDarkMode() ? ThemeMode.light : ThemeMode.dark);
     saveThemeMode(!isSavedDarkMode());
   }
-
 }

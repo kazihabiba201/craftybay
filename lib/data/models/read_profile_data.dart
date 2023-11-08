@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/data/models/user_data.dart';
 
 class ReadProfileData {
@@ -25,25 +24,25 @@ class ReadProfileData {
 
   ReadProfileData(
       {this.id,
-        this.cusName,
-        this.cusAdd,
-        this.cusCity,
-        this.cusState,
-        this.cusPostcode,
-        this.cusCountry,
-        this.cusPhone,
-        this.cusFax,
-        this.shipName,
-        this.shipAdd,
-        this.shipCity,
-        this.shipState,
-        this.shipPostcode,
-        this.shipCountry,
-        this.shipPhone,
-        this.userId,
-        this.createdAt,
-        this.updatedAt,
-        this.user});
+      this.cusName,
+      this.cusAdd,
+      this.cusCity,
+      this.cusState,
+      this.cusPostcode,
+      this.cusCountry,
+      this.cusPhone,
+      this.cusFax,
+      this.shipName,
+      this.shipAdd,
+      this.shipCity,
+      this.shipState,
+      this.shipPostcode,
+      this.shipCountry,
+      this.shipPhone,
+      this.userId,
+      this.createdAt,
+      this.updatedAt,
+      this.user});
 
   ReadProfileData.fromJson(Map<String, dynamic> json) {
     id = json['id'];

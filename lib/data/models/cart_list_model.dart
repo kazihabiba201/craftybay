@@ -1,4 +1,3 @@
-
 import 'package:ecommerce/data/models/product.dart';
 
 class CartListModel {
@@ -40,14 +39,14 @@ class CartData {
 
   CartData(
       {this.id,
-        this.email,
-        this.productId,
-        this.color,
-        this.size,
-        this.quantity,
-        this.createdAt,
-        this.updatedAt,
-        this.product});
+      this.email,
+      this.productId,
+      this.color,
+      this.size,
+      this.quantity,
+      this.createdAt,
+      this.updatedAt,
+      this.product});
 
   CartData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -59,7 +58,7 @@ class CartData {
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     product =
-    json['product'] != null ? Product.fromJson(json['product']) : null;
+        json['product'] != null ? Product.fromJson(json['product']) : null;
   }
 
   Map<String, dynamic> toJson() {
