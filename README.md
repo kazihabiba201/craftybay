@@ -248,8 +248,8 @@ craftybay_ecommerce_application/
 
 ### Bottom_NavBar Screen
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/c4bba8a8-9304-4223-aa7c-0b2853da4021" height="500"/>
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/66461402-1465-497a-878c-592aedc3866c" height="500"/>
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/59a45ab0-9928-4b73-8a19-694ce1300c6d" height="500"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/66461402-1465-497a-878c-592aedc3866c" height="500"/>
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/8d2b66e7-5e9f-4d7b-a1d3-5d3b200d9f35" height="500"/>
 
 ### Payment_gateway Screen
