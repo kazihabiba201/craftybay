@@ -239,16 +239,16 @@ craftybay_ecommerce_application/
 
 ## Crafty_Bay Screens
 
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/a4c8a461-239e-449b-9783-ed6149582774" height="400"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/a4c8a461-239e-449b-9783-ed6149582774" height="600"/>
 
 
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/d8d37e3a-9dd1-4ae6-8900-46561bc82dab" height="400"/>
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/fd4d8547-256d-4c3b-87a5-edd7cb626349" height="400"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/d8d37e3a-9dd1-4ae6-8900-46561bc82dab" height="600"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/fd4d8547-256d-4c3b-87a5-edd7cb626349" height="600"/>
 
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/5fcedcec-62fd-4333-98cf-85991b9eecfc" height="400"/>
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/66461402-1465-497a-878c-592aedc3866c" height="400"/>
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/59a45ab0-9928-4b73-8a19-694ce1300c6d" height="400"/>
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/8d2b66e7-5e9f-4d7b-a1d3-5d3b200d9f35" height="400"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/5fcedcec-62fd-4333-98cf-85991b9eecfc" height="600"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/66461402-1465-497a-878c-592aedc3866c" height="600"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/59a45ab0-9928-4b73-8a19-694ce1300c6d" height="600"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/8d2b66e7-5e9f-4d7b-a1d3-5d3b200d9f35" height="600"/>
 
 
 
