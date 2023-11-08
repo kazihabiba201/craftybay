@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 
 class ProductDetailsController extends GetxController {
   bool _getProductDetailsInProgress = false;
-
   ProductDetails _productDetails = ProductDetails();
   String _errorMessage = '';
   final List<String> _availableColors = [];
@@ -26,12 +25,10 @@ class ProductDetailsController extends GetxController {
   Future<bool> getProductDetails(int id) async {
     _getProductDetailsInProgress = true;
     update();
-    final NetworkResponse response =
-        await NetworkCaller().getRequest(Urls.getProductDetails(id));
+    final NetworkResponse response = await NetworkCaller().getRequest(Urls.getProductDetails(id));
     _getProductDetailsInProgress = false;
     if (response.isSuccess) {
-      _productDetails =
-          ProductDetailsModel.fromJson(response.responseJson ?? {}).data!.first;
+      _productDetails = (ProductDetailsModel.fromJson(response.responseJson ?? {})).data!.first;
       _convertStringToColor(_productDetails.color ?? '');
       _convertStringToSizes(_productDetails.size ?? '');
       update();
@@ -56,4 +53,5 @@ class ProductDetailsController extends GetxController {
   void _convertStringToSizes(String sizes) {
     _availableSizes = sizes.split(',');
   }
+
 }

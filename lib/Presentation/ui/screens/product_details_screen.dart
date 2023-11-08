@@ -203,11 +203,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           SizedBox(
             height: 30,
             child: SizePicker(
-              initialSelected: 0,
-              onSelected: (int selectedSize) {
-                _selectedColorIndex = selectedSize;
-              },
-              sizes: productDetails.color?.split(',') ?? [],
+                initialSelected: 0,
+                onSelected: (int selectedSize) {
+                  _selectedColorIndex = selectedSize;
+                },
+                sizes: productDetails.color?.split(',') ?? [],
             ),
           ),
           const SizedBox(height: 16),
@@ -305,13 +305,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     quantity,
                   );
                   if (result) {
-                    Get.snackbar(
-                      'Added to Cart',
-                      'This Product has been Added to Cart',
-                      colorText: Colors.white,
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: AppColors.primaryColor.withOpacity(0.5),
-                    );
+                    Get.snackbar('Added to cart',
+                        'This product has been added to cart list',
+                        snackPosition: SnackPosition.BOTTOM);
                   }
                 },
                 child: const Text('Add to Cart'),

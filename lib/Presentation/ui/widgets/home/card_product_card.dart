@@ -1,17 +1,15 @@
+import 'package:ecommerce/data/models/cart_list_model.dart';
 import 'package:ecommerce/Presentation/state_holders/cart_list_controller.dart';
 import 'package:ecommerce/Presentation/ui/screens/product_details_screen.dart';
 import 'package:ecommerce/Presentation/ui/utility/app_colors.dart';
 import 'package:ecommerce/Presentation/ui/widgets/custom_stepper.dart';
-import 'package:ecommerce/data/models/cart_list_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CartProductCard extends StatelessWidget {
   final CartData cartData;
-
   const CartProductCard({
-    super.key,
-    required this.cartData,
+    super.key, required this.cartData,
   });
 
   @override
@@ -30,12 +28,9 @@ class CartProductCard extends StatelessWidget {
               width: 100,
               height: 100,
               decoration: BoxDecoration(
-                color: Colors.white,
-                image: DecorationImage(
-                  image: NetworkImage(cartData.product?.image ??
-                      'https://freepngimg.com/thumb/shoes/27428-5-nike-shoes-transparent-background.png'),
-                ),
-              ),
+                  color: Colors.white,
+                  image: DecorationImage(
+                      image: NetworkImage(cartData.product?.image ?? ''))),
             ),
             const SizedBox(
               width: 8,
@@ -54,45 +49,38 @@ class CartProductCard extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                cartData.product?.title ??
-                                    'Hard Coded Product Title',
-                                style: const TextStyle(
-                                    fontSize: 17, color: Colors.black),
+                                cartData.product?.title ?? '',
+                                style:
+                                const TextStyle(fontSize: 18, color: Colors.black),
                               ),
                               const SizedBox(
-                                height: 6,
+                                height: 4,
                               ),
                               RichText(
                                 text: TextSpan(
                                   style: const TextStyle(
-                                    color: Colors.black54,
-                                    fontSize: 13,
-                                  ),
+                                      color: Colors.black54, fontSize: 12),
                                   children: [
-                                    TextSpan(
-                                        text: 'Color: ${cartData.color ?? ''}'),
-                                    TextSpan(
-                                        text: ' Size: ${cartData.size ?? ''}'),
+                                    TextSpan(text: 'Color: ${cartData.color ?? ''} '),
+                                    TextSpan(text: 'Size: ${cartData.size}'),
                                   ],
                                 ),
-                              ),
+                              )
                             ],
                           ),
                         ),
                         IconButton(
-                          onPressed: () {
-                            Get.find<CartListController>()
-                                .removeFromCart(cartData.productId!);
-                          },
-                          icon: const Icon(Icons.delete_outline),
-                        ),
+                            onPressed: () {
+                              Get.find<CartListController>().removeFromCart(cartData.productId!);
+                            },
+                            icon: const Icon(Icons.delete_outline))
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '\$${cartData.product?.price ?? 0}',
+                          '\$${cartData.product?.price ?? ''}',
                           style: const TextStyle(
                               color: AppColors.primaryColor,
                               fontSize: 18,
@@ -103,24 +91,21 @@ class CartProductCard extends StatelessWidget {
                           child: FittedBox(
                             child: CustomStepper(
                               lowerLimit: 1,
-                              upperLimit: 10,
+                              upperLimit: 20,
                               stepValue: 1,
                               value: cartData.quantity ?? 1,
                               onChange: (int value) {
-                                print(cartData.id!);
-                                print(value);
-                                Get.find<CartListController>()
-                                    .changeItem(cartData.id!, value);
+                                Get.find<CartListController>().changeItem(cartData.id!, value);
                               },
                             ),
                           ),
-                        ),
+                        )
                       ],
-                    ),
+                    )
                   ],
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
