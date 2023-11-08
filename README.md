@@ -243,8 +243,8 @@ craftybay_ecommerce_application/
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/a4c8a461-239e-449b-9783-ed6149582774" height="500"/>
 
 ### Verification Screen
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/d8d37e3a-9dd1-4ae6-8900-46561bc82dab" height="600"/>
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/fd4d8547-256d-4c3b-87a5-edd7cb626349" height="600"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/d8d37e3a-9dd1-4ae6-8900-46561bc82dab" height="500"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/fd4d8547-256d-4c3b-87a5-edd7cb626349" height="500"/>
 
 ### Bottom_NavBar Screen
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/c4bba8a8-9304-4223-aa7c-0b2853da4021" height="500"/>
@@ -263,7 +263,6 @@ craftybay_ecommerce_application/
 ### Other Screens
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/a803a79b-ab8a-4877-945b-4769c60e7937" height="500"/>
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/43100cde-480f-4968-8cdb-54f3859b8e24" height="500"/>
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/59a45ab0-9928-4b73-8a19-694ce1300c6d" height="500"/>
 
 
 ### Light & Dark Theme
