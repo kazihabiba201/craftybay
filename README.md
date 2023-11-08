@@ -269,5 +269,12 @@ craftybay_ecommerce_application/
 
 
 ### Light & Dark Theme
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/c4bba8a8-9304-4223-aa7c-0b2853da4021" height="600"/>
-<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/5fcedcec-62fd-4333-98cf-85991b9eecfc" height="600"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/c4bba8a8-9304-4223-aa7c-0b2853da4021" height="500"/>
+<img src="https://github.com/kazihabiba201/craftybay/assets/72264916/5fcedcec-62fd-4333-98cf-85991b9eecfc" height="500"/>
+
+
+## Expressing Gratitude
+
+### I would like to extend my sincere appreciation to my mentors:
+
+I am grateful to `Rabbil Hasan` for his insightful prerecorded classes. Additionally, I want to thank `Rafat Jamader Meraz` for his guidance on creating a seamless UI and API integration.
