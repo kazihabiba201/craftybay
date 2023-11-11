@@ -29,6 +29,8 @@ class CreateProfileScreen extends StatelessWidget {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,7 +148,7 @@ class CreateProfileScreen extends StatelessWidget {
                     keyboardType: TextInputType.number,
                     controller: _cusPostcodeTEController,
                     decoration: const InputDecoration(
-                      hintText: '55064-6682',
+                      hintText: '77064-3235',
                       labelText: 'Postcode',
                     ),
                     validator: (String? text) {

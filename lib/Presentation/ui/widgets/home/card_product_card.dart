@@ -16,7 +16,7 @@ class CartProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to(() => ProductDetailsScreen(productId: cartData.product!.id!));
+        Get.to(() => ProductDetailsScreen(productId: cartData.productData!.id!));
       },
       child: Card(
         elevation: 2,
@@ -30,7 +30,7 @@ class CartProductCard extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white,
                   image: DecorationImage(
-                      image: NetworkImage(cartData.product?.image ?? ''))),
+                      image: NetworkImage(cartData.productData?.image ?? ''))),
             ),
             const SizedBox(
               width: 8,
@@ -49,7 +49,7 @@ class CartProductCard extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                cartData.product?.title ?? '',
+                                cartData.productData?.title ?? '',
                                 style:
                                 const TextStyle(fontSize: 18, color: Colors.black),
                               ),
@@ -61,8 +61,10 @@ class CartProductCard extends StatelessWidget {
                                   style: const TextStyle(
                                       color: Colors.black54, fontSize: 12),
                                   children: [
-                                    TextSpan(text: 'Color: ${cartData.color ?? ''} '),
-                                    TextSpan(text: 'Size: ${cartData.size}'),
+                                    TextSpan(
+                                        text:
+                                        'Color: ${cartData.color ?? ''}  '),
+                                    TextSpan(text: 'Size: ${cartData.size ?? ''}'),
                                   ],
                                 ),
                               )
@@ -80,7 +82,7 @@ class CartProductCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '\$${cartData.product?.price ?? ''}',
+                          '\$${cartData.productData?.price ?? ''}',
                           style: const TextStyle(
                               color: AppColors.primaryColor,
                               fontSize: 18,

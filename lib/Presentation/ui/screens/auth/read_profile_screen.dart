@@ -82,6 +82,10 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
         title: const Text(
           'Update Profile',
           style: TextStyle(color: Colors.black),
+
+        ),
+        leading: const BackButton(
+          color: Colors.black54,
         ),
         elevation: 0,
       ),
@@ -103,29 +107,13 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     height: 16,
                   ),
                   Text(
-                    'Update Profile',
+                    'Update Your Profile',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           fontSize: 24,
                         ),
                   ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                      'Update your profile & please write your current information.',
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium
-                          ?.copyWith(color: Colors.grey)),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  Text(
-                    'User Details',
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontSize: 20,
-                        ),
-                  ),
+
+
                   const SizedBox(
                     height: 24,
                   ),
@@ -172,7 +160,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     keyboardType: TextInputType.text,
                     controller: _cusCityTEController,
                     decoration: const InputDecoration(
-                      hintText: 'Mireyamouth',
+                      hintText: 'Dhaka',
                       labelText: 'City',
                     ),
                     validator: (String? text) {
@@ -206,7 +194,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     keyboardType: TextInputType.number,
                     controller: _cusPostcodeTEController,
                     decoration: const InputDecoration(
-                      hintText: '55064-6682',
+                      hintText: '77064-3235',
                       labelText: 'Postcode',
                     ),
                     validator: (String? text) {
@@ -261,7 +249,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     keyboardType: TextInputType.phone,
                     controller: _cusFaxTEController,
                     decoration: const InputDecoration(
-                      hintText: '356******',
+                      hintText: '650******',
                       labelText: 'Fax',
                     ),
                     validator: (String? text) {
@@ -278,7 +266,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     height: 40,
                   ),
                   Text(
-                    'Shipping Details',
+                    'Please update your Shipping Details',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontSize: 20,
                         ),
@@ -308,7 +296,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     keyboardType: TextInputType.text,
                     controller: _shipAddTEController,
                     decoration: const InputDecoration(
-                      hintText: '237 Delia Ports',
+                      hintText: '123 Delia Ports',
                       labelText: 'Shipping Address',
                       contentPadding: EdgeInsets.symmetric(
                         horizontal: 16,
@@ -363,7 +351,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     keyboardType: TextInputType.number,
                     controller: _shipPostcodeTEController,
                     decoration: const InputDecoration(
-                      hintText: '55064-6682',
+                      hintText: '77064-3235',
                       labelText: 'Shipping Postcode',
                     ),
                     validator: (String? text) {

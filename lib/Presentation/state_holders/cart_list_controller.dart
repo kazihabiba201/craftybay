@@ -59,7 +59,7 @@ class CartListController extends GetxController {
     _totalPrice = 0;
     for (CartData data in _cartListModel.data ?? []) {
       _totalPrice += ((data.quantity ?? 1) *
-          (double.tryParse(data.product?.price ?? '0') ?? 0));
+          (double.tryParse(data.productData?.price ?? '0') ?? 0));
     }
     update();
   }

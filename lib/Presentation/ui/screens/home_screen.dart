@@ -8,6 +8,7 @@ import 'package:ecommerce/Presentation/state_holders/read_profile_controller.dar
 import 'package:ecommerce/Presentation/state_holders/special_product_controller.dart';
 import 'package:ecommerce/Presentation/state_holders/theme_mode_controller.dart';
 import 'package:ecommerce/Presentation/ui/screens/auth/complete_profile_screen.dart';
+import 'package:ecommerce/Presentation/ui/screens/auth/read_profile_screen.dart';
 import 'package:ecommerce/Presentation/ui/screens/product_list_screen.dart';
 import 'package:ecommerce/Presentation/ui/screens/splash_screens.dart';
 import 'package:ecommerce/Presentation/ui/utility/Images_assets.dart';
@@ -53,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: Icons.person,
               onTap: () async {
                 await Get.find<ReadProfileController>().readProfileData();
-                Get.to(() => CreateProfileScreen());
+                Get.to(() => const UpdateProfileScreen());
               },
             ),
             const SizedBox(

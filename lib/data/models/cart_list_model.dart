@@ -26,6 +26,8 @@ class CartListModel {
   }
 }
 
+
+
 class CartData {
   int? id;
   String? email;
@@ -34,7 +36,7 @@ class CartData {
   String? size;
   String? createdAt;
   String? updatedAt;
-  Product? product;
+  Product? productData;
   int? quantity;
 
   CartData(
@@ -44,9 +46,9 @@ class CartData {
         this.color,
         this.size,
         this.createdAt,
-        this.updatedAt,
         this.quantity,
-        this.product});
+        this.updatedAt,
+        this.productData});
 
   CartData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -57,8 +59,7 @@ class CartData {
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     quantity = int.tryParse(json['qty'] ?? 1);
-    product =
-    json['product'] != null ? Product.fromJson(json['product']) : null;
+    productData = json['product'] != null ? Product.fromJson(json['product']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -70,9 +71,7 @@ class CartData {
     data['size'] = size;
     data['created_at'] = createdAt;
     data['updated_at'] = updatedAt;
-    if (product != null) {
-      data['product'] = product!.toJson();
-    }
+    data['product'] = productData;
     return data;
   }
 }

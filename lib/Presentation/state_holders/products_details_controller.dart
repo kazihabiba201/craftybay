@@ -50,8 +50,8 @@ class ProductDetailsController extends GetxController {
     }
   }
 
-  void _convertStringToSizes(String sizes) {
-    _availableSizes = sizes.split(',');
+  void _convertStringToSizes(String size) {
+    _availableSizes = size.split(',');
   }
 
 }
