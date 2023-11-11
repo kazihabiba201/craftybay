@@ -121,7 +121,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     keyboardType: TextInputType.name,
                     controller: _cusNameTEController,
                     decoration: const InputDecoration(
-                      hintText: 'John Doe',
+                      hintText: 'Hob ken',
                       labelText: 'Full Name',
                     ),
                     validator: (String? text) {
@@ -139,7 +139,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     keyboardType: TextInputType.text,
                     controller: _cusAddTEController,
                     decoration: const InputDecoration(
-                      hintText: '237 Delia Ports',
+                      hintText: '871 Delia Ports',
                       labelText: 'Your Address',
                       contentPadding: EdgeInsets.symmetric(
                         horizontal: 16,
@@ -278,7 +278,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     keyboardType: TextInputType.name,
                     controller: _shipNameTEController,
                     decoration: const InputDecoration(
-                      hintText: 'John Doe',
+                      hintText: 'Hob ken',
                       labelText: 'Shipping Person Name',
                     ),
                     validator: (String? text) {
