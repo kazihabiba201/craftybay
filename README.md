@@ -273,9 +273,3 @@ craftybay_ecommerce_application/
 <img src="https://github.com/kazihabiba201/craftybay/assets/72264916/5fcedcec-62fd-4333-98cf-85991b9eecfc" height="500"/>
 
 
-## Expressing Gratitude
-
-### I'm deeply grateful to the individuals who guided me:
-
-- `Rabbil Hasan` for sharing invaluable knowledge through prerecorded classes.
-- `Rafat Jamader Meraz` taught me how to make UI like this and the API integration seamless.
