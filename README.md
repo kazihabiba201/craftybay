@@ -1,8 +1,12 @@
 # Crafty_Bay (E-commerce Project Documentation)
 
+##
+
 CraftyBay is a sample e-commerce project that demonstrates the potential of creating an online platform for showcasing cutting-edge electronics and gadgets. It is not intended for commercial use or sale but serves as an example of how a tech-centric e-commerce app could be designed. CraftyBay's focus is on providing a seamless and enjoyable shopping experience, with an emphasis on user-friendliness and a wide range of products to explore.
 
 ![Screenshot 2023-11-08 045306](https://github.com/kazihabiba201/craftybay/assets/72264916/7689e5a0-11e4-4635-879a-4e5ff41cf4ee)
+
+##
 
 ## MVP Implementation
 
@@ -20,6 +24,7 @@ In our Flutter e-commerce project, CraftyBay, we've implemented the MVP (Model-V
 
 - `Educational Value:` CraftyBay is not just a functional e-commerce app but also serves as an educational resource. By implementing MVP, we help developers and learners understand a widely-used architecture in real-world applications.
 
+##
 
 ## CraftyBay Project Features
 
@@ -34,6 +39,7 @@ In our Flutter e-commerce project, CraftyBay, we've implemented the MVP (Model-V
 - `Payment Gateway:` Conveniently make secure transactions.
 - `Internet Connection Check:` Ensure a smooth shopping experience with real-time 
 
+##
 
 ## Project Tools
 
@@ -49,7 +55,7 @@ In our Flutter e-commerce project, CraftyBay, we've implemented the MVP (Model-V
 
 
 
-
+##
 
 
 
@@ -116,6 +122,7 @@ By integrating these dependencies into the CraftyBay e-commerce application, we 
 
 - flutter_rating_bar (^4.0.1): Simplifies the implementation of a product rating system, enabling user reviews and ratings to build trust and inform purchase decisions.
 
+##
 
 ## Project structure
 
@@ -231,6 +238,8 @@ craftybay_ecommerce_application/
     └── main.dart
 
 ```
+##
+
 ## Crafty_Bay Nav Logo
 ![logo_nav](https://github.com/kazihabiba201/craftybay/assets/72264916/32c4fbb5-bbcf-4ad0-9795-35f381737532)
 
